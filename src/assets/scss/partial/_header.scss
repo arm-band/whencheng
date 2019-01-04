@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                                *
+//  ナビゲーションバー                               *
+//                                                *
+// ============================================= */
+.navbar {
+    &.navbar-light {
+        .navbar-brand {
+            display: block;
+            margin: 0 auto;
+            &, &:link, &:visited {
+                color: $main-color;
+                text-decoration: none;
+            }
+            &:hover, &:active, &:focus {
+                color: $main-color2;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.navbar-nav {
+    .nav-item {
+        .nav-link {
+            &.router-link-active {
+                background-color: $main-color;
+                color: $bg-color;
+            }
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

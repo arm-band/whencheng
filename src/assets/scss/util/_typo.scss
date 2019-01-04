@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+//丸ゴシック指定
+@mixin marugo() {
+    font-family: "Kosugi Maru", "Lato", sans-serif;
+}
+
+//フォント・行間・文字間指定
+body {
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    &, h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, span, small {
+        @include marugo();
+    }
+}

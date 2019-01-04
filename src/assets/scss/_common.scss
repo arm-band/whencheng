@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                               *
+// Import                                        *
+//                                               *
+// ============================================= */
+@import "util/var"; //変数
+@import "../../../node_modules/brand-colors/dist/latest/scss/brand-colors.latest"; //ソーシャルメディアなどのブランドカラー
+@import "util/typo"; //ベンダープレフィックス等のMixinモジュール
+@import "util/module"; //ベンダープレフィックス等のMixinモジュール
+@import "util/base"; //フォント指定やIE対処など
+
+// ============================================= *
+//                                               *
+// アイキャッチ                                    *
+//                                               *
+// ============================================= */
+@import "partial/eyecatch";
+
+// ============================================= *
+//                                               *
+// ヘッダ                                         *
+//                                               *
+// ============================================= */
+@import "partial/header";
+
+// ============================================= *
+//                                               *
+// メインコンテンツ                                 *
+//                                               *
+// ============================================= */
+.main {
+    margin: {
+        left: 0;
+        right: 0;
+    }
+    padding: {
+        left: 0;
+        right: 0;
+    }
+    background-color: $bg-color;
+    color: $color;
+    h1, h2, h3, h4, h5, h6 {
+        color: $main-color3;
+    }
+    div:not(.text-center) p:not(.text-center) {
+        text-indent: 1rem;
+        & .fa-fw {
+            margin: {
+                left: -1rem;
+                right: 1rem;
+            }
+        }
+    }
+    section {
+        ul {
+            padding-left: 1.4rem;
+        }
+        ol {
+            padding-left: 1.6rem;
+        }
+    }
+}
+
+// ============================================= *
+//                                               *
+// フッタ                                         *
+//                                               *
+// ============================================= */
+@import "partial/footer";
+
+// ============================================= *
+//                                               *
+// ページトップへ戻る                               *
+//                                               *
+// ============================================= */
+@import "partial/returnpagetop";
+
+// ============================================= *
+//                                               *
+// VueRouter Effect                              *
+//                                               *
+// ============================================= */
+.fade {
+    &-enter-active, &-leave-active {
+        transition: opacity 1s ease;
+    }
+    &-leave-active {
+        position: absolute;
+    }
+    &-enter, &-leave-to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

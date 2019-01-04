@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                               *
+// モジュール                                      *
+//                                               *
+// ============================================= */
+//trasition
+@mixin t() {
+    transition: all 0.3s ease;
+}
+
+//キービジュアルの背景画像
+@mixin eyecatchBGImg($imgPath) {
+    .eyecatch {
+        background: {
+            image: url($imgPath);
+            repeat: no-repeat;
+            position: center center;
+        }
+    }
+    body:not(.mobileSafari) .eyecatch {
+        background-attachment: fixed;
+    }
+    body.mobileSafari .eyecatch { //index.jsでUAにより付与。mobile Safariバグ対策
+        background-attachment: scroll;
+    }
+    .eyecatch {
+        background-size: cover;
+    }
+}
+//キービジュアルに見出しを左右上下中央寄せ
+@mixin eyecatchCenter() {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    .container-fluid {
+        box-sizing: border-box; //IEバグフィックス
+        max-width: 100%; //IEバグフィックス
+    }
+}
+//キービジュアルの見出しのタイポグラフィ
+@mixin eyecatchTypo($fontSize) {
+    color: $main-color;
+    z-index: 3;
+    font: {
+        size: $fontSize;
+    }
+}

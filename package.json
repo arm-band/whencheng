@@ -1,0 +1,48 @@
+{
+    "name": "whencheng",
+    "version": "0.0.1",
+    "description": "橙のポータルサイト",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "when": "mkdirp src/assets/scss/assets src/assets/scss/assets src/assets/scss/assets/bootstrap src/assets/scss/assets/bootstrap/honoka src/assets/scss/assets/bootstrap/honoka/bootstrap src/assets/scss/assets/bootstrap/honoka/honoka src/assets/scss/assets/bootstrap/honoka/bootstrap/scss src/assets/scss/assets/bootstrap/honoka/bootstrap/scss/mixins src/assets/scss/assets/bootstrap/honoka/bootstrap/scss/utilities",
+        "cheng": "npm-run-all -p pam wheelbarrow crossing fortune",
+        "one": "npm-run-all -p cat walk pam wheelbarrow crossing fortune",
+        "cat": "copyfiles -f \"./node_modules/bootstrap-honoka/scss/*.scss\" \"./src/assets/scss/assets/bootstrap\"",
+        "walk": "copyfiles -f \"./node_modules/bootstrap-honoka/scss/honoka/_honoka.scss\" \"./src/assets/scss/assets/bootstrap/honoka\"",
+        "pam": "copyfiles -f \"./node_modules/bootstrap-honoka/scss/honoka/*.scss\" \"./src/assets/scss/assets/bootstrap/honoka/honoka\"",
+        "wheelbarrow": "copyfiles -f \"./node_modules/bootstrap/scss/*.scss\" \"./src/assets/scss/assets/bootstrap/honoka/bootstrap/scss\"",
+        "crossing": "copyfiles -f \"./node_modules/bootstrap/scss/mixins/*.scss\" \"./src/assets/scss/assets/bootstrap/honoka/bootstrap/scss/mixins\"",
+        "fortune": "copyfiles -f \"./node_modules/bootstrap/scss/utilities/*.scss\" \"./src/assets/scss/assets/bootstrap/honoka/bootstrap/scss/utilities\"",
+        "nyan": "rimraf ./src/assets/scss/assets ./package-lock.json",
+        "start": "npm-run-all -s when cheng",
+        "init": "npm-run-all -s when one"
+    },
+    "author": "Arm Band",
+    "dependencies": {
+        "vue": "^2.5.21",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1",
+        "brand-colors": "^2.0.1",
+        "bootstrap": "^4.1.3",
+        "bootstrap-honoka": "^4.1.3",
+        "bowser": "^1.9.4",
+        "copyfiles": "^2.0.0",
+        "jquery": "^3.3.1",
+        "jquery.easing": "^1.4.1",
+        "mkdirp": "^0.5.1",
+        "npm-run-all": "^4.1.3",
+        "rimraf": "^2.6.2"
+    },
+    "devDependencies": {
+        "@vue/cli-service": "^3.2.0",
+        "node-sass": "^4.9.0",
+        "sass-loader": "^7.0.1",
+        "vue-template-compiler": "^2.5.21"
+    },
+    "engines": {
+        "node": ">= 8.5.0",
+        "npm": ">= 4.0.0"
+    }
+}
