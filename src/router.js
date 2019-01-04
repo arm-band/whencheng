@@ -19,17 +19,50 @@ export default new Router({
             }
         },
         {
+            path: '/youtube',
+            name: 'youtube',
+            component: function () {
+                return import ('./views/Youtube.vue')
+            },
+            meta: {
+                title: 'Youtube',
+                description: 'YouTubeのチャンネルへのリンクです。',
+                ogpimage: ''
+            }
+        },
+        {
             path: '/twitter',
             name: 'twitter',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
             component: function () {
-                return import ( /* webpackChunkName: "about" */ './views/Twitter.vue')
+                return import ('./views/Twitter.vue')
             },
             meta: {
                 title: 'Twitetr',
                 description: 'Twitterの投稿ギャラリーです。',
+                ogpimage: ''
+            }
+        },
+        {
+            path: '/instagram',
+            name: 'instagram',
+            component: function () {
+                return import ('./views/Instagram.vue')
+            },
+            meta: {
+                title: 'Instagram',
+                description: 'Instagramのギャラリーです。',
+                ogpimage: ''
+            }
+        },
+        {
+            path: '/coten',
+            name: 'coten',
+            component: function () {
+                return import ('./views/Coten.vue')
+            },
+            meta: {
+                title: 'Coten',
+                description: 'cotenのギャラリーです。',
                 ogpimage: ''
             }
         }

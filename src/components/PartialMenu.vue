@@ -24,6 +24,9 @@
             <li class="nav-item">
                 <router-link to="/mastodon" class="nav-link"><i class="fab fa-fw fa-mastodon" aria-hidden="true"></i>Mastodon</router-link>
             </li>
+            <li class="nav-item">
+                <router-link to="/coten" class="nav-link"><i class="fas fa-fw fa-camera" aria-hidden="true"></i>coten</router-link>
+            </li>
         </ul>
         </div>
         </nav>
