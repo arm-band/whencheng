@@ -16,6 +16,9 @@
 
     <!-- css -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+#ie-buster-app div,#ie-buster-app a{border-radius:4px}#ie-buster-app p,#ie-buster-app a{letter-spacing:0}#ie-buster-app a{background-color: #FC8D00!important}
+    </style>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru|Lato" rel="stylesheet">
@@ -27,11 +30,15 @@
     <meta name="og:title" content="何時の橙" />
     <meta name="og:site_name" content="何時の橙" />
     <meta name="og:description" content="何時の橙" />
-    <meta name="og:image" content="./img/eyecatch.jpg" />
+    <meta name="og:image" content="https://whencheng.ewigleere.net/img/icon.jpg" />
     <meta name="og:url" content="https://whencheng.ewigleere.net/" />
 </head>
-<body>
+<body id="body">
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"></script>
+    <script>
+ieBuster({mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Vivaldi をご利用ください。",linkText: "ダウンロードページへ",linkUrl: "https://vivaldi.com/ja/"})
+</script>
 </body>
 </html>

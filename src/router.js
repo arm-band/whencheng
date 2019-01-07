@@ -4,6 +4,14 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
+const pathInfo = {
+    notfound: {
+        path: '/404',
+        name: 'NotFound',
+        title: 'Not found'
+    }
+}
+
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -15,6 +23,18 @@ export default new Router({
             meta: {
                 title: 'ホーム',
                 description: '橙のポータルサイトです。',
+                ogpimage: ''
+            }
+        },
+        {
+            path: '/gphoto',
+            name: 'gphoto',
+            component: function () {
+                return import ('./views/GooglePhoto.vue')
+            },
+            meta: {
+                title: 'Googleフォト',
+                description: 'Googleフォトのギャラリーへのリンクです。',
                 ogpimage: ''
             }
         },
@@ -55,6 +75,18 @@ export default new Router({
             }
         },
         {
+            path: '/mastodon',
+            name: 'mastodon',
+            component: function () {
+                return import ('./views/Mastodon.vue')
+            },
+            meta: {
+                title: 'Mastodon',
+                description: 'Mastodonのアカウントページへのリンクです。',
+                ogpimage: ''
+            }
+        },
+        {
             path: '/coten',
             name: 'coten',
             component: function () {
@@ -62,8 +94,26 @@ export default new Router({
             },
             meta: {
                 title: 'Coten',
-                description: 'cotenのギャラリーです。',
+                description: 'cotenのアカウントページへのリンクです。',
                 ogpimage: ''
+            }
+        },
+        {
+            path: pathInfo.notfound.path,
+            name: pathInfo.notfound.name,
+            component: function () {
+                return import (`./views/${pathInfo.notfound.name}.vue`)
+            },
+            meta: {
+                title: pathInfo.notfound.title,
+                description: 'ページが見つかりませんでした。',
+                ogpimage: ''
+            }
+        },
+        {
+            path: '/*',
+            redirect: {
+                name: pathInfo.notfound.name
             }
         }
     ]

@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+.loading {
+//    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    background-color: $bg-color;
+//    top: 0;
+//    left: 0;
+    &_contents {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $main-color;
+    }
+    &_text {
+        animation: blink 3s ease infinite backwards;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

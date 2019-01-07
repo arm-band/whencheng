@@ -1,9 +1,11 @@
 <template>
     <div id="app">
-        <PartialHeader/>
-        <transition name="fade">
-            <router-view/>
-        </transition>
+        <div class="upper">
+            <PartialHeader/>
+            <transition name="fade">
+                <router-view/>
+            </transition>
+        </div>
         <PartialMenu/>
         <PartialR2pt/>
         <PartialFooter/>
@@ -34,14 +36,14 @@ export default {
                 ogDescription: 'meta[name="description"]'
             },
             footerInfo: this.$store.getters.footerInfo,
-            metaInfo: this.$store.getters.metaInfo,
+            metaInfo: this.$store.getters.metaInfo
         }
     },
     methods: {
-        createPageTitle : function(to) {
+        createPageTitle(to) {
             const headInfo = this.headInfo
             const sitename = headInfo.sitename
-            // タイトルを設定
+            //タイトルを設定
             if(to.meta.title) {
                 const setTitle = `${to.meta.title} | ${sitename}`;
                 document.title = setTitle;
@@ -50,8 +52,8 @@ export default {
                 document.title = sitename
                 document.querySelector(this.headMeta.ogTitle).setAttribute('content', sitename)
             }
-            // メタタグdescription設定
-            if(to.meta.description){
+            //メタタグdescription設定
+            if(to.meta.description) {
                 const setDesc = to.meta.description;
                 document.querySelector(this.headMeta.description).setAttribute('content', setDesc)
                 document.querySelector(this.headMeta.ogDescription).setAttribute('content', setDesc)
@@ -62,12 +64,12 @@ export default {
         }
     },
     mounted() {
-        const to = this.$route;
-        this.createPageTitle(to);
-      },
+        const to = this.$route
+        this.createPageTitle(to)
+    },
     watch: {
         '$route' (to, from) {
-            this.createPageTitle(to);
+            this.createPageTitle(to)
         }
     }
 }
@@ -76,6 +78,4 @@ export default {
 <style lang="scss">
 @import './assets/scss/assets/bootstrap/bootstrap';
 @import './assets/scss/common';
-
-//&.router-link-exact-active {
 </style>

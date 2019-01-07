@@ -6,17 +6,22 @@
 //                                               *
 // ============================================= */
 @import "util/var"; //変数
-@import "../../../node_modules/brand-colors/dist/latest/scss/brand-colors.latest"; //ソーシャルメディアなどのブランドカラー
 @import "util/typo"; //ベンダープレフィックス等のMixinモジュール
 @import "util/module"; //ベンダープレフィックス等のMixinモジュール
-@import "util/base"; //フォント指定やIE対処など
+@import "util/base"; //フォント指定など
 
+body {
+    h1, h2, h3, h4, h5, h6 {
+        color: $main-color;
+    }
+}
 // ============================================= *
 //                                               *
 // アイキャッチ                                    *
 //                                               *
 // ============================================= */
-@import "partial/eyecatch";
+@include eyecatchBGImg("assets/img/eyecatch.jpg", 80vh, "homeEyecatch");
+@include eyecatchBGImg("assets/img/eyecatch_notfound.jpg", 40vh, "notfoundEyecatch");
 
 // ============================================= *
 //                                               *
@@ -30,6 +35,9 @@
 // メインコンテンツ                                 *
 //                                               *
 // ============================================= */
+.upper {
+    min-height: calc(100vh - (1.5rem * 2) - #{$footer-height}); //コンテンツの高さが足りなくてもフッタを最下部に表示するように //1.5rem * 2:my-4で足される上端と下端のマージンの合計
+}
 .main {
     margin: {
         left: 0;
@@ -41,9 +49,6 @@
     }
     background-color: $bg-color;
     color: $color;
-    h1, h2, h3, h4, h5, h6 {
-        color: $main-color3;
-    }
     div:not(.text-center) p:not(.text-center) {
         text-indent: 1rem;
         & .fa-fw {
@@ -61,7 +66,23 @@
             padding-left: 1.6rem;
         }
     }
+    &.gphoto {
+        ul {
+            list-style: none outside;
+            padding-left: 0;
+            li {
+                text-align: center;
+            }
+        }
+    }
 }
+
+// ============================================= *
+//                                               *
+// メニュー                                       *
+//                                               *
+// ============================================= */
+@import "partial/menu";
 
 // ============================================= *
 //                                               *
@@ -79,15 +100,25 @@
 
 // ============================================= *
 //                                               *
+// Now Loading                                   *
+//                                               *
+// ============================================= */
+@import "partial/nowloading";
+
+// ============================================= *
+//                                               *
 // VueRouter Effect                              *
 //                                               *
 // ============================================= */
 .fade {
+    position: relative;
     &-enter-active, &-leave-active {
-        transition: opacity 1s ease;
+        @include t(1.0s);
     }
     &-leave-active {
         position: absolute;
+        width: 100%;
+        overflow: hidden;
     }
     &-enter, &-leave-to {
         opacity: 0;

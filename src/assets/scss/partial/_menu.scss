@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+.menu {
+    &_toggle {
+        display: block;
+        background-color: transparent;
+        cursor: pointer;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        position: relative;
+        height: 4rem;
+        &Open {
+            .menu_button {
+                height: 4.8rem;
+            }
+        }
+        &Close {
+            margin-bottom: 32px;
+        }
+    }
+    &_button {
+        &Wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+    &_img {
+        max-height: 4rem;
+    }
+    &_text {
+        font-size: 0.8rem;
+        color: $main-color;
+    }
+    .navbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: calc(100% - 1.5rem);
+        margin-top: 1.5rem;
+        background-color: $bg-color;
+        border-top: 1px solid $main-color;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        &:not(.show) {
+            top: calc(100vh + 3rem);
+        }
+        &.show {
+            animation: easeOutBounceOpen 1s 0s forwards;
+        }
+        &-expand-lg {
+            .menu {
+                &bar {
+                    width: 100%;
+                }
+                &_nav {
+                    list-style: none outside;
+                    .menu_item {
+                        .menu_link {
+                            padding: 0.8rem 1rem;
+                            text-decoration: none;
+                            display: block;
+                            &.router-link-active, &:hover, &:active, &:focus {
+                                background-color: $main-color;
+                                color: $bg-color;
+                                border-radius: 4px;
+                                padding-left: 1.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menubar_imgWrapper {
+            position: absolute;
+            float: right;
+            top: -1.5rem;
+            right: 2rem;
+            .menubar_img {
+                height: 8rem;
+            }
+        }
+    }
+}
+
+@keyframes easeOutBounceOpen {
+    0% {
+        top: calc(100vh + 3rem);
+        animation-timing-function: ease-in;
+    }
+    33% {
+        top: 0;
+        animation-timing-function: ease-out;
+    }
+    50% {
+        top: 4rem;
+        animation-timing-function: ease-in;
+    }
+    66% {
+        top: 0;
+        animation-timing-function: ease-out;
+    }
+    82% {
+        top: 1rem;
+        animation-timing-function: ease-in;
+    }
+    92% {
+        top: 0;
+        animation-timing-function: ease-out;
+    }
+    97% {
+        top: 0.5rem;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes easeOutBounceClose {
+    0% {
+        top: 0;
+        animation-timing-function: ease-in;
+    }
+    33% {
+        top: calc(100vh + 3rem);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        top: calc(100vh - 3rem);
+        animation-timing-function: ease-in;
+    }
+    66% {
+        top: calc(100vh + 3rem);
+        animation-timing-function: ease-out;
+    }
+    82% {
+        top: calc(100vh + 2rem);
+        animation-timing-function: ease-in;
+    }
+    92% {
+        top: calc(100vh + 3rem);
+        animation-timing-function: ease-out;
+    }
+    97% {
+        top: calc(100vh + 1rem);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        top: calc(100vh + 3rem);
+    }
+}
+
+// ============================================= *
+//                                               *
+// transition Effect                             *
+//                                               *
+// ============================================= */
+.menubutton {
+    &-enter-active, &-leave-active {
+        @include t(1.0s);
+    }
+    &-enter, &-leave-to {
+        opacity: 0;
+    }
+}

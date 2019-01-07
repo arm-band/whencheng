@@ -3,12 +3,11 @@
 $rpt-size: 44px;
 
 .returnPageTop {
-    display: none;
     position: fixed;
     bottom: 4%;
-    right: 6%;
-       z-index: 90;
-       i {
+    right: 2%;
+    z-index: 90;
+    .fa-fw {
         display: block;
         font-size: $rpt-size / 2;
         width: $rpt-size;
@@ -19,9 +18,23 @@ $rpt-size: 44px;
         color: $bg-color;
         text-align: center;
         cursor: pointer;
-        @include t();
-        &:hover, &:active {
+        @include t(.3s);
+        &:hover, &:active, &:focus {
             background-color: $main-color;
         }
+    }
+}
+
+// ============================================= *
+//                                               *
+// transition Effect                             *
+//                                               *
+// ============================================= */
+.r2pt {
+    &-enter-active, &-leave-active {
+        @include t(.3s);
+    }
+    &-enter, &-leave-to {
+        opacity: 0;
     }
 }

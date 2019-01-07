@@ -1,10 +1,11 @@
 <template>
-    <div class="container-fluid eyecatch">
+    <div class="container-fluid eyecatch" :class="{[className]: true}">
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Eyecatch'
+    name: 'Eyecatch',
+    props: ['className']
 }
 </script>

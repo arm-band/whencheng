@@ -1,8 +1,12 @@
 <template>
-    <main class="main home">
-        <Eyecatch/>
-        <About/>
-    </main>
+    <div class="home">
+        <Eyecatch class-name="homeEyecatch"/>
+        <main class="main homeMain">
+            <div class="container my-5">
+                <About/>
+            </div>
+        </main>
+    </div>
 </template>
 
 <script>

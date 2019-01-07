@@ -2,6 +2,7 @@ node_modules
 package-lock.json
 src/assets/scss/assets/bootstrap/honoka/bootstrap/
 src/assets/scss/assets/bootstrap/honoka/honoka/
+public/phpapi/
 /dist
 /misc
 
