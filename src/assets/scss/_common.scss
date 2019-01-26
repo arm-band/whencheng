@@ -9,6 +9,7 @@
 @import "util/typo"; //ベンダープレフィックス等のMixinモジュール
 @import "util/module"; //ベンダープレフィックス等のMixinモジュール
 @import "util/base"; //フォント指定など
+@import "../../../node_modules/brand-colors/dist/latest/scss/brand-colors.latest"; //ソーシャルメディアなどのブランドカラー
 
 body {
     h1, h2, h3, h4, h5, h6 {
@@ -55,6 +56,28 @@ body {
             margin: {
                 left: -1rem;
                 right: 1rem;
+            }
+        }
+    }
+    .snsShare {
+        .btn-group {
+            .btn {
+                &, &:link, &:visited, &:hover, &:active, &:focus {
+                    color: $bg-color;
+                    text-decoration: none;
+                }
+                &:hover, &:active, &:focus {
+                    opacity: 0.8;
+                }
+                &.btnTwitter {
+                    background-color: $bc-twitter;
+                }
+                &.btnFacebook {
+                    background-color: $bc-facebook;
+                }
+                &.btnLine {
+                    background-color: $bc-line;
+                }
             }
         }
     }
