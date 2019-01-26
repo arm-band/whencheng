@@ -1,11 +1,12 @@
 <template>
     <div>
         <section class="container aboutPage">
-            <h2 class="text-center mt-4 mb-3">このページについて</h2>
+            <h2 class="text-center mt-4 mb-3"><i class="fas fa-fw fa-bookmark" aria-hidden="true"></i>このページについて</h2>
             <p class="text-center">橙のフォトギャラリーや各種SNSの情報をまとめたポータルサイトです。</p>
+            <p class="text-center">「whencheng」というURLは、橙の鳴き声が「にゃー」より「うぇーん」「わーん」に近いので、『「うぇーん」と鳴く橙』という意味で付けました。</p>
         </section>
         <section class="container aboutCheng">
-            <h2 class="text-center mt-4 mb-3">橙について</h2>
+            <h2 class="text-center mt-4 mb-3"><i class="fas fa-fw fa-cat" aria-hidden="true"></i>橙について</h2>
             <div class="card border-0 col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                 <img class="card-img-top" src="@/assets/img/icon.jpg" alt="橙の顔写真">
                 <div class="card-body">

@@ -21,7 +21,7 @@ body {
 //                                               *
 // ============================================= */
 @include eyecatchBGImg("assets/img/eyecatch.jpg", 80vh, "homeEyecatch");
-@include eyecatchBGImg("assets/img/eyecatch_notfound.jpg", 40vh, "notfoundEyecatch");
+@include eyecatchBGImg("assets/img/eyecatch_notfound.jpg", 50vh, "notfoundEyecatch");
 
 // ============================================= *
 //                                               *
@@ -74,6 +74,14 @@ body {
                 text-align: center;
             }
         }
+    }
+}
+@include media-breakpoint-down(lg) {
+    h2 {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.2rem;
     }
 }
 

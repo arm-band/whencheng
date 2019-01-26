@@ -28,6 +28,10 @@ export default new Vuex.Store({
             url: {
                 googlephoto: [
                     {
+                        url: 'https://photos.app.goo.gl/5UX8es4hgfgJ3PLy5',
+                        title: '2019年の橙'
+                    },
+                    {
                         url: 'https://photos.app.goo.gl/DjptEGFM5ZC5LAVNA',
                         title: '2018年の橙'
                     },

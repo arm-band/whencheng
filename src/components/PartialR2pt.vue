@@ -1,7 +1,7 @@
 <template>
     <transition name="r2pt">
         <div class="returnPageTop" v-if="this.stater2pt.show" v-on:click="r2pt">
-            <i class="fas fa-fw fa-arrow-up" aria-hidden="true"></i>
+            <i class="fas fa-fw fa-paw" aria-hidden="true" title="ページトップへもどる"></i>
         </div>
     </transition>
 </template>

@@ -1,7 +1,7 @@
 <template>
     <div class="menu">
         <nav class="navbar navbar-expand-lg" :class="{show:this.menuopen}">
-            <h2 class="text-center mt-4 mb-3">めにゅー</h2>
+            <h2 class="text-center mb-1 mt-lg-4 mb-lg-3">めにゅー</h2>
             <div class="menubar" id="menubar">
                 <ul class="menu_nav">
                     <li class="menu_item">
